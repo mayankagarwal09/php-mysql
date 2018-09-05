@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>New user signup </title>
+<script language="javascript">
+function check()
+{
+  var passwd=document.getElementById('passwd').value;
+  var cnfm_passwd=document.getElementById('cnfm_passwd').value;
+  if(passwd === "" || passwd!==cnfm_passwd){
+      alert("passwords not matching");
+      return false;
+  }
+
+  return true;
+}
+</script>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<center>
+ <form method="POST" action="signupuser.php" style="border:1px solid #ccc" onsubmit="return check()">
+  <div class="container">
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+   
+    <input type="email" placeholder="Enter Email" name="email" required>
+
+    <input type="password" placeholder="Enter Password" name="psw" id="passwd" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required><br>
+    <small>password must be of 6 chars or more and must include a letter and a number</small><br>
+
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" id="cnfm_passwd" required>
+
+
+    <div class="clearfix">
+      <button type="reset" class="cancelbtn">Reset</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+  </div>
+  <a href="login.html">already have account? login here</a>
+</form> 
+</center>
+<?php
+include("database.php");
+?>
+
+</body>
+</html> 
+
