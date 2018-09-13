@@ -27,10 +27,8 @@ $_SESSION["login"]=$email;
 if (isset($_SESSION["login"])) 
 {
 echo "<h1 align=center>".$email." sucessfully logged in!! </h1>";
-$_SESSION = array();
-//clear session from disk
-session_destroy();
-exit;
+header('Location:./home.php');
+
 }
 ?>
 </body>

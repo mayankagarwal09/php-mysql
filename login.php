@@ -15,7 +15,7 @@
    
     <input type="email" placeholder="Enter Email" name="email" required>
 
-    <input type="password" placeholder="Enter Password" name="psw" id="passwd" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required>
+    <input type="password" placeholder="Enter Password" name="psw" id="passwd" pattern="^(?=.*[ A-Za-z])(?=.*\d)[ A-Za-z\d]{6,}$" required>
 <br>
 <?php
   include "captcha.php";
